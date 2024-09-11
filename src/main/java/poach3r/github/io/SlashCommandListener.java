@@ -8,15 +8,15 @@ import poach3r.github.io.Commands.AbstractCommand;
  * @author poach3r
  */
 public class SlashCommandListener extends ListenerAdapter {
-    private final pBot pBot;
+    private final sdhQuery sdhQuery;
 
-    public SlashCommandListener(pBot pBot) {
-        this.pBot = pBot;
+    public SlashCommandListener(sdhQuery sdhQuery) {
+        this.sdhQuery = sdhQuery;
     }
 
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
-        for (AbstractCommand c : pBot.cfg.getCommands()) {
+        for (AbstractCommand c : sdhQuery.cfg.getCommands()) {
             if (c.get().getName().equals(event.getName())) {
                 c.execute(event);
                 return;

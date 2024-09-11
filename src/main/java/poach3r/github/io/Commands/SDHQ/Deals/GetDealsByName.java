@@ -26,7 +26,7 @@ public class GetDealsByName extends AbstractCommand {
     private String embedContent;
 
     public GetDealsByName(Config cfg) {
-        super(Commands.slash("getdeals", "Lists any deals for a game from an affiliated store.")
+        super(Commands.slash("getdeals", "Gets all the deals for a game from an affiliated storefront.")
                 .addOption(OptionType.STRING, "name", "The name of the game.", true));
 
         gson = new Gson();

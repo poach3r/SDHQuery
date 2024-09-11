@@ -14,14 +14,14 @@ import java.util.Scanner;
 /**
  * @author poach3r
  */
-public class pBot {
+public class sdhQuery {
     protected final Config cfg;
     protected final CommandListUpdateAction commands;
     protected final JDA jda;
     private final Gson gson;
     protected String cfgString;
 
-    public pBot() {
+    public sdhQuery() {
         gson = new Gson();
         cfgString = "";
 
@@ -48,6 +48,6 @@ public class pBot {
     }
 
     public static void main(String[] args) {
-        new pBot();
+        new sdhQuery();
     }
 }
