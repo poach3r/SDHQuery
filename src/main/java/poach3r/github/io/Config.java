@@ -2,6 +2,7 @@ package poach3r.github.io;
 
 import com.google.gson.annotations.SerializedName;
 import poach3r.github.io.Commands.AbstractCommand;
+import poach3r.github.io.Commands.SDHQ.Bundles.GetBundles;
 import poach3r.github.io.Commands.SDHQ.Deals.GetDealsById;
 import poach3r.github.io.Commands.SDHQ.Deals.GetDealsByName;
 import poach3r.github.io.Commands.SDHQ.Review.GetReviewById;
@@ -20,12 +21,19 @@ import java.util.List;
 public class Config {
     @SerializedName("botToken")
     private String botToken;
+
     @SerializedName("itadKey")
     private String itadKey;
+
     @SerializedName("reviewLinkOverride")
     private List<List<String>> reviewLinkOverride;
+
     @SerializedName("affiliates")
     private List<Affiliate> affiliates;
+
+    @SerializedName("enabledPlugins")
+    private List<String> enabledPlugins;
+
     private final List<AbstractCommand> commands;
 
     public Config() {
@@ -35,6 +43,7 @@ public class Config {
         commands.add(new GetReviewByName(this));
         commands.add(new GetReviewById(this));
         commands.add(new Search(this));
+        commands.add(new GetBundles(this));
     }
 
     String getBotToken() {
@@ -55,6 +64,14 @@ public class Config {
 
     public List<AbstractCommand> getCommands() {
         return commands;
+    }
+
+    protected void addCommand(AbstractCommand command) {
+        commands.add(command);
+    }
+
+    public List<String> getEnabledPlugins() {
+        return enabledPlugins;
     }
 
     public static class Affiliate {

@@ -8,9 +8,9 @@ import poach3r.github.io.Commands.AbstractCommand;
  * @author poach3r
  */
 public class SlashCommandListener extends ListenerAdapter {
-    private final sdhQuery sdhQuery;
+    private final SDHQuery sdhQuery;
 
-    public SlashCommandListener(sdhQuery sdhQuery) {
+    public SlashCommandListener(SDHQuery sdhQuery) {
         this.sdhQuery = sdhQuery;
     }
 
