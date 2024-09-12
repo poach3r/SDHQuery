@@ -14,9 +14,16 @@ SDHQuery is a bot created for the steamdeckhq.net Discord server.
 |---------------------|----------------------------------------------------------------------------------|---------------|
 | botToken            | Your Discord bot's token.                                                        | String        |
 | itadKey             | Your isthereanydeal.com API key.                                                 | String        | 
+| enabledPlugins      | The paths of any plugins you want to enable.                                     | String[]      |
 | reviewLinkOverride  | Replaces the review link in the 1st array with the review link in the 2nd array. | String[][]    |
 | affiliates          | All the affiliated storefront.                                                   | Affiliate[]   |
 | affiliate.name      | The name of the store.                                                           | String        |
 | affiliate.url       | The URL of the store.                                                            | String        |
 | affiliate.suffix    | Any text to be appended to the end of the link                                   | String        |
 | affiliate.overrides | Replaces the deal link in the 1st array with the deal link in the 2nd array      | String[][]    |                                       
+
+# Todo
+- Add a command to list bundles
+- Add a help command
+- Code cleanup
+- Optimize JSON deserialization
